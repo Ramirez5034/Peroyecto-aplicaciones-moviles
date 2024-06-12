@@ -42,13 +42,12 @@ class _ActualizarProveedorState extends State<ActualizarProveedor> {
           'Nombre': nombre,
           'Telefono': telefono,
           'Administrador': administrador,
-          'Status': widget.proveedor['status'], // Mantiene el estado original
+          'Status': widget.proveedor['status'], 
         }),
       );
 
       if (response.statusCode == 204 || response.statusCode == 200) {
-        Navigator.pop(context); // Regresar a la lista de proveedores después de actualizar el proveedor
-      } else {
+        Navigator.pop(context); 
         throw Exception('Failed to update proveedor');
       }
     }
