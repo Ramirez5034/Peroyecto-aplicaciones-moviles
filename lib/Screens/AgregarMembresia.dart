@@ -15,7 +15,7 @@ class _AgregarMembresiaState extends State<AgregarMembresia> {
   final _formKey = GlobalKey<FormState>();
   String numero = '';
   String tipo = '';
-  bool? premia; // Cambio el tipo a bool? para permitir null
+  bool? premia; 
   int status = 1;
 
   Future<void> agregarMembresia() async {
@@ -91,7 +91,7 @@ class _AgregarMembresiaState extends State<AgregarMembresia> {
                   Text('Premia: '),
                   Checkbox(
                     value: premia,
-                    tristate: true, // Permitir el tercer estado: null
+                    tristate: true,
                     onChanged: (value) {
                       setState(() {
                         premia = value;
