@@ -22,7 +22,7 @@ class _ActualizarUsuarioState extends State<ActualizarUsuario> {
   void initState() {
     super.initState();
     idUsuario = widget.usuario['idusuario'];
-    numEmpleado = widget.usuario['numEmpleado'] as int; // Cast int explicitly
+    numEmpleado = widget.usuario['numEmpleado'] as int; 
     nombre = widget.usuario['nombre'];
     contrasena = widget.usuario['contrasena'];
   }
