@@ -28,7 +28,7 @@ class _AgregarProductoState extends State<AgregarProducto> {
           'nombre': nombre,
           'precio': precio,
           'cantidad': cantidad,
-          'status': true, // Explicitamente incluyendo el campo status con true
+          'status': true, 
         }),
       );
 
