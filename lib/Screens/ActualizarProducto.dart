@@ -23,7 +23,7 @@ class _ActualizarProductoState extends State<ActualizarProducto> {
   @override
   void initState() {
     super.initState();
-    // Asegurar que 'clave' sea una cadena de texto
+    
     clave = widget.producto['clave'].toString();
     nombre = widget.producto['nombre'];
     precio = widget.producto['precio'];
