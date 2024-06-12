@@ -18,14 +18,14 @@ class _ActualizarMembresiaState extends State<ActualizarMembresia> {
   final _formKey = GlobalKey<FormState>();
   late String numero;
   late String tipo;
-  late bool premia; // Cambio aquí para asegurar que es booleano
+  late bool premia; 
 
   @override
   void initState() {
     super.initState();
-    numero = widget.membresia['numero'].toString(); // Asegurar que es una cadena
+    numero = widget.membresia['numero'].toString(); 
     tipo = widget.membresia['tipo'];
-    premia = widget.membresia['premia'] == 1; // Convertir de int a bool si es necesario
+    premia = widget.membresia['premia'] == 1; 
   }
 
   Future<void> actualizarMembresia() async {
@@ -69,7 +69,7 @@ class _ActualizarMembresiaState extends State<ActualizarMembresia> {
               TextFormField(
                 initialValue: numero,
                 decoration: InputDecoration(labelText: 'Número'),
-                keyboardType: TextInputType.number, // Para asegurar que solo se ingresen números
+                keyboardType: TextInputType.number, 
                 onChanged: (value) {
                   setState(() {
                     numero = value;
