@@ -3,7 +3,7 @@ import 'Usuario.dart';
 import 'Producto.dart';
 import 'Proveedor.dart';
 import 'Membresia.dart';
-
+import 'Login_Page.dart'; 
 
 class Menu extends StatelessWidget {
   @override
@@ -11,6 +11,18 @@ class Menu extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         title: Text('Menú'),
+        automaticallyImplyLeading: false, 
+        actions: [
+          IconButton(
+            icon: Icon(Icons.logout),
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(builder: (context) => LoginPage()), 
+              );
+            },
+          ),
+        ],
       ),
       body: Center(
         child: Column(
@@ -52,7 +64,6 @@ class Menu extends StatelessWidget {
               },
               child: Text('Membresias'),
             ),
-  
           ],
         ),
       ),
