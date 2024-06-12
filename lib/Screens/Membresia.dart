@@ -25,7 +25,6 @@ class _MembresiasState extends State<Membresias> {
 
     if (response.statusCode == 200) {
       setState(() {
-        // Filtra las membresías para mostrar solo las activas
         membresias = json.decode(response.body).where((membresia) => membresia['status'] == true).toList();
       });
     } else {
@@ -37,7 +36,7 @@ class _MembresiasState extends State<Membresias> {
     try {
       final response = await _putWithTimeout(
         Uri.parse('http://192.168.7.140:5172/Membresia/inactivar/$id'),
-        duration: const Duration(seconds: 60), // Establece el tiempo de espera aquí
+        duration: const Duration(seconds: 60), 
       );
 
       if (response.statusCode == 204 || response.statusCode == 200) {
@@ -90,9 +89,18 @@ class _MembresiasState extends State<Membresias> {
                       'Tipo: ${membresia['tipo']}',
                       style: const TextStyle(fontSize: 12),
                     ),
-                    Text(
-                      'Premia: ${membresia['premia']}',
-                      style: const TextStyle(fontSize: 12),
+                    Row(
+                      children: [
+                        const Text(
+                          'Premia: ',
+                          style: TextStyle(fontSize: 12),
+                        ),
+                        Icon(
+                          membresia['premia'] ? Icons.check : Icons.close,
+                          color: membresia['premia'] ? Colors.green : Colors.red,
+                          size: 16,
+                        ),
+                      ],
                     ),
                   ],
                 ),
