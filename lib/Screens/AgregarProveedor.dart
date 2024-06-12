@@ -38,7 +38,7 @@ class _AgregarProveedorState extends State<AgregarProveedor> {
         );
 
         if (response.statusCode == 201) {
-          Navigator.pop(context); // Regresar a la lista de proveedores después de agregar el proveedor
+          Navigator.pop(context); 
         } else {
           throw Exception('Error al agregar proveedor: Status code: ${response.statusCode}, Response body: ${response.body}');
         }
